@@ -5,26 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Potato Video</title>
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #111;
-      margin: 0;
-    }
+    * { margin: 0; padding: 0; }
+    html, body { height: 100%; width: 100%; overflow: hidden; background: #000; }
     video {
-      max-width: 90%;
-      max-height: 90%;
-      border: 3px solid #fff;
-      border-radius: 8px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: -1;
+    }
+    .overlay {
+      position: relative;
+      z-index: 1;
+      color: white;
+      font-size: 2rem;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <video controls autoplay loop>
-    <source src="potato.mp4" type="video/mp4">
+  <video autoplay muted loop>
+    <source src="https://arstudios750.github.io/test/potato.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+
+  <div class="overlay">
+    Potato Video Playing!
+  </div>
 </body>
 </html>
+
